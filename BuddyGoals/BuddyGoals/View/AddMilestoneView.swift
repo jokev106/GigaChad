@@ -1,5 +1,5 @@
 //
-//  AddChallengeView.swift
+//  AddMilestoneView.swift
 //  BuddyGoals
 //
 //  Created by Jonathan Kevin on 21/06/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddChallengeView: View {
+struct AddMilestoneView: View {
     
     //    @Environment(\.dismiss) var dismissSheetView
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
@@ -72,9 +72,8 @@ struct AddChallengeView: View {
     }//bodyView
 }
 
-struct AddChallengeView_Previews: PreviewProvider {
+struct AddMilestoneView_Previews: PreviewProvider {
     static var previews: some View {
-        AddChallengeView()
+        AddMilestoneView()
     }
 }
-

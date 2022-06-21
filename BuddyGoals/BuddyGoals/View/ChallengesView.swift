@@ -17,7 +17,7 @@ struct ChallengesView: View {
     private var items: FetchedResults<Item>
     
     //Untuk modal view add new challenge
-    @State var addNewChallengeView = false
+    @State var addNewMilestoneView = false
 
     var body: some View {
         NavigationView {
@@ -36,10 +36,10 @@ struct ChallengesView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: {self.addNewChallengeView.toggle()}) {
+                    Button(action: {self.addNewMilestoneView.toggle()}) {
                         Label("Add Item", systemImage: "plus")
-                    }.sheet(isPresented: $addNewChallengeView) {
-                        AddChallengeView()
+                    }.sheet(isPresented: $addNewMilestoneView) {
+                        AddMilestoneView()
                     }
                 }
             }
