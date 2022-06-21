@@ -15,6 +15,9 @@ struct ChallengesView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    //Untuk modal view add new challenge
+    @State var addNewChallengeView = false
 
     var body: some View {
         NavigationView {
@@ -33,8 +36,10 @@ struct ChallengesView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {self.addNewChallengeView.toggle()}) {
                         Label("Add Item", systemImage: "plus")
+                    }.sheet(isPresented: $addNewChallengeView) {
+                        AddChallengeView()
                     }
                 }
             }
