@@ -139,6 +139,13 @@
 			path = BuddyGoalsUITests;
 			sourceTree = "<group>";
 		};
+		B85CBD6C2861AD85009F8A0D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		B88665382860CB4A000FAA20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +157,7 @@
 		B88665392860CB52000FAA20 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B85CBD6C2861AD85009F8A0D /* Component */,
 				B33F15F72860750C0053A915 /* ChallengesView.swift */,
 				B88665342860C8D2000FAA20 /* MainView.swift */,
 				B88665362860CA8F000FAA20 /* TravenView.swift */,
