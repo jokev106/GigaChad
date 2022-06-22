@@ -39,7 +39,7 @@ struct AddMilestoneView: View {
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding([.top, .leading], 26.0)
                         DatePicker("Start Date", selection: $startDatePicker, in: Date()...)
-                            .datePickerStyle(GraphicalDatePickerStyle())
+//                            .datePickerStyle(GraphicalDatePickerStyle())
                             .padding()
                             .foregroundColor(Color.black)
                             .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))

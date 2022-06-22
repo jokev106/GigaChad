@@ -18,57 +18,55 @@ struct AddMissionView: View {
         GeometryReader{ geo in
             
             VStack{
+                
                 NavigationView{
-                    VStack{
-                        
-                        //Mission title set up
-                        Text("Title")
-                            .foregroundColor(Color.blue)
-                            .frame(maxWidth: .infinity , alignment: .leading)
-                            .padding([.top, .leading], 26.0)
+                    Form{
+                        //Mission title section set up
+                        Section (header: Text("Title")
+                                    .foregroundColor(Color.blue)
+                                    .bold()
+                        ){
                         TextField("Ex: Morning Run", text: $milestoneTitle)
-                            .padding()
+                                .padding(.all, 7.0)
                             .foregroundColor(Color.black)
-                            .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
-                            .padding(.horizontal)
+                        //                            .padding(.horizontal)
+                        }
                         
-                        //Commitment set up
-                        Text("Commitment")
-                            .foregroundColor(Color.blue)
-                            .frame(maxWidth: .infinity , alignment: .leading)
-                            .padding([.top, .leading], 26.0)
-                        TextField("Ex: Run for 30 minutes around the block", text: $milestoneTitle)
-                            .padding()
+                        //Commitment section set up
+                        Section (header: Text("Commitment")
+                                    .foregroundColor(Color.blue)
+                                    .bold()
+                        ){
+                        TextField("Ex: Run for 30 minutes or 2 miles", text: $milestoneTitle)
+                                .padding(.all, 7.0)
                             .foregroundColor(Color.black)
-                            .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
-                            .padding(.horizontal)
+                        //                            .padding(.horizontal)
+                        }
                         
-                        //Detail schedule set up
-                        Text("Detail")
-                            .foregroundColor(Color.blue)
-                            .frame(maxWidth: .infinity , alignment: .leading)
-                            .padding([.top, .leading], 26.0)
-                        Form{
-                            Section{
-                                DatePicker("Start Date", selection: $startDatePicker, displayedComponents: .hourAndMinute)
-                                    .padding()
-                                    .foregroundColor(Color.black)
-//                                    .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
-                            }
+                        //Detail set up
+                        Section (header: Text("Details")
+                                    .foregroundColor(Color.blue)
+                                    .bold()
+                        ){
+                            DatePicker("Time", selection: $startDatePicker, displayedComponents: .hourAndMinute)
+                                .foregroundColor(Color.black)
+                            TextField("Where", text: $milestoneTitle)
+                                .padding(.all, 4.0)
+                            .foregroundColor(Color.black)
                         }
                         
                         //Schedule set up
-                        Text("Detail")
-                            .foregroundColor(Color.blue)
-                            .frame(maxWidth: .infinity , alignment: .leading)
-                            .padding([.top, .leading], 26.0)
-                        DatePicker("Start Date", selection: $startDatePicker)
-                            .padding()
+                        Section (header: Text("Schedule")
+                                    .foregroundColor(Color.blue)
+                                    .bold()
+                        ){
+                            DatePicker("Start Date", selection: $startDatePicker, in: Date()..., displayedComponents: .date)
+                                .foregroundColor(Color.black)
+                            TextField("Where", text: $milestoneTitle)
+                            .padding(.all, 4.0)
                             .foregroundColor(Color.black)
-                            .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
-                            .padding(.horizontal)
-                        Spacer()
-                    }
+                        }
+                    }//Vstack line 22
                     //content
                     
                     
