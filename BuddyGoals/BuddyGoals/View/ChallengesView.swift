@@ -18,75 +18,61 @@ struct ChallengesView: View {
 
     var body: some View {
         
-        //Try to make card
-        VStack {
-            
-            ZStack {
-                Color("blueUIColor")
+        ZStack {
+            Color(.white)
+            VStack {
+                blueGiga
                     .edgesIgnoringSafeArea(.top)
-                    .frame(height: 130)
-                                
-                VStack{
-                    ZStack {
-                        Text("Let’s keep it up! ")
-                            .font(.system(size: 18, design: .default))
-                            .padding(10)
-                                                
-                        Button(action: {
-                            //do action
-                        }, label: {
-                            Text("Edit")
-                                .font(.system(size: 13))
-                        })
-                        .padding(5)
-                        .background(Color("grayButton"))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                    }
-                    
-                    Text("Lose 10 kg in 3 months")
-                        .font(.system(size: 21, weight: .bold, design: .default))
-                        .border(Color("blueUIColor"))
-                        .padding(10)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .frame(height: 90)
+               
+                NavigationView {
+                    List {
+                        ForEach(items) { item in
+                            NavigationLink {
+                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                            } label: {
+                                Text(item.timestamp!, formatter: itemFormatter)
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
 
-                }
-                .frame(width: 350)
-                .background(.white)
-                .shadow(radius: 20)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                
-        }
-        //close
-            
-            NavigationView {
-                
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                        } label: {
-                            Text(item.timestamp!, formatter: itemFormatter)
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            EditButton()
+                        }
+                        ToolbarItem {
+                            Button(action: addItem) {
+                                Label("Add Item", systemImage: "plus")
+                            }
                         }
                     }
-                    .onDelete(perform: deleteItems)
+                    Text("Select an item")
+                } //Navigation
+                .padding(.top, 40)
 
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
-                }
-                Text("Select an item")
-                
-                
             }
             
-        }
+            VStack {
+                Text("Hi Giga! ")
+                    .font(.system(size: 25, weight: .bold, design: .default))
+                    .padding(10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("Lose 10 kg in 3 months")
+                    .font(.system(size: 21, weight: .bold, design: .default))
+                    //.border(Color("blueUIColor"))
+                    .padding(10)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .frame(maxWidth: .infinity)
+            }
+            .frame(width: 350)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(radius: 20)
+            .position(x: 195, y: 75)
+            
+        } //ZSTACK
         
     }
 
