@@ -15,97 +15,111 @@ struct ChallengesView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+//    //for White Content Navigation Bar
+//    init() {
+//       let navBarAppearance = UINavigationBar.appearance()
+//       navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+//       navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+//    }
 
     var body: some View {
         
-        ZStack {
-            Color(.white)
-            VStack {
-                blueGiga
-                    .edgesIgnoringSafeArea(.top)
-                    .frame(height: 90)
-               
-                NavigationView {
-                    List {
-                        ForEach(items) { item in
-                            NavigationLink {
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                            } label: {
-                                Text(item.timestamp!, formatter: itemFormatter)
-                            }
-                        }
-                        .onDelete(perform: deleteItems)
-
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
-                        }
-                        ToolbarItem {
-                            Button(action: addItem) {
-                                Label("Add Item", systemImage: "plus")
-                            }
-                        }
-                    }
-                    Text("Select an item")
-                } //Navigation
-                .padding(.top, 40)
-
-            }
+        NavigationView {
             
             VStack {
-                Text("Hi Giga! ")
-                    .font(.system(size: 25, weight: .bold, design: .default))
-                    .padding(10)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("Lose 10 kg in 3 months")
-                    .font(.system(size: 21, weight: .bold, design: .default))
-                    //.border(Color("blueUIColor"))
-                    .padding(10)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .frame(maxWidth: .infinity)
-            }
-            .frame(width: 350)
-            .background(.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .shadow(radius: 20)
-            .position(x: 195, y: 75)
-            
-        } //ZSTACK
+                ScrollView {
+                    
+                    ZStack {
+                        primary900
+                            .edgesIgnoringSafeArea(.top)
+                            .frame(height: 200)
+                        
+                        //Card
+                        Button(action: {
+                            //DO action
+                        }, label: {
+                            VStack{
+                                HStack {
+                                    Text("Being Productive")
+                                        .font(.system(size: 25, weight: .bold))
+                                        .frame(alignment: .leading)
+                                        .foregroundColor(Color.black)
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .padding(.trailing, 10)
+                                        .foregroundColor(Color.gray)
+                                }
+                                
+                                Text("15 Days to go")
+                                    .font(.system(size: 8))
+                                    .padding(7)
+                                    .foregroundColor(Color.black)
+                                    .background(white)
+                                    .cornerRadius(10)
+                                
+                            }
+                            .padding()
+                            .background(.white)
+
+                        })//Button card
+                        .cornerRadius(10)
+                        .padding()
+                        //Close of Card
+                        
+                    } //ZStack
+                    
+                    VStack(spacing:0){
+                        
+                        HStack {
+                            Text("Exercise")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 22.5))
+                                .bold()
+                            Spacer()
+                            Button(action: {
+                                
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 20, weight: .bold))
+                            })
+                        }.padding()
+                        
+                        //Card
+                        CardView(imageCard: "Stars_4", colorCard: purple, milestone: "abla", destinationCard: "")
+                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
+                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
+                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
+                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
+                        //CardView()
+                        //Close of Card
+                        
+                        Spacer()
+
+                    } //VStack
+                } //Scrollview
+                
+           
+            } //VStack
+            .navigationTitle("Goal")
+//            .toolbar {
+//                ToolbarItemGroup(placement: .navigationBarTrailing){
+//                    Button(action: {
+//                        //Do action
+//                    }, label: {
+//                        Image(systemName: "bell.fill")
+//                            //.foregroundColor(.white)
+//                    })
+//                }
+//            } //Toolbar
+    
+        } //Navigation View
         
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+    } //Close of View
+    
 }
 
 private let itemFormatter: DateFormatter = {
@@ -120,3 +134,6 @@ struct ChallengesView_Previews: PreviewProvider {
         ChallengesView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+
+
+

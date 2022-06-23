@@ -17,6 +17,7 @@
 		B33F16162860750D0053A915 /* BuddyGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16152860750D0053A915 /* BuddyGoalsUITests.swift */; };
 		B33F16182860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16172860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift */; };
 		B82DF3C42862A9C400893D11 /* ColorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DF3C32862A9C400893D11 /* ColorComponent.swift */; };
+		B83CB0442864198C00242791 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CB0432864198C00242791 /* CardView.swift */; };
 		B88665332860C630000FAA20 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665322860C630000FAA20 /* ProgressView.swift */; };
 		B88665352860C8D2000FAA20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665342860C8D2000FAA20 /* MainView.swift */; };
 		B88665372860CA8F000FAA20 /* TravenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665362860CA8F000FAA20 /* TravenView.swift */; };
@@ -53,6 +54,7 @@
 		B33F16152860750D0053A915 /* BuddyGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsUITests.swift; sourceTree = "<group>"; };
 		B33F16172860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B82DF3C32862A9C400893D11 /* ColorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponent.swift; sourceTree = "<group>"; };
+		B83CB0432864198C00242791 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B88665322860C630000FAA20 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B88665342860C8D2000FAA20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B88665362860CA8F000FAA20 /* TravenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravenView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B82DF3C32862A9C400893D11 /* ColorComponent.swift */,
+				B83CB0432864198C00242791 /* CardView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B88665372860CA8F000FAA20 /* TravenView.swift in Sources */,
+				B83CB0442864198C00242791 /* CardView.swift in Sources */,
 				B82DF3C42862A9C400893D11 /* ColorComponent.swift in Sources */,
 				B33F15FF2860750D0053A915 /* Persistence.swift in Sources */,
 				B88665352860C8D2000FAA20 /* MainView.swift in Sources */,

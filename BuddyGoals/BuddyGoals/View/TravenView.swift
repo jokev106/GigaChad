@@ -9,7 +9,10 @@ import SwiftUI
 
 struct TravenView: View {
     var body: some View {
-        Text("Traven Lol")
+        NavigationView {
+            Text("asdadad")
+        }
+        .navigationTitle("Goals")
     }
 }
 

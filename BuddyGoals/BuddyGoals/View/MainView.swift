@@ -24,7 +24,7 @@ struct MainView: View {
                 .tabItem{
                     Label("Progress", systemImage: "calendar")
                 }
-        }.accentColor(Color("blueUIColor"))
+        }.accentColor(primary900)
     }
 }
 
