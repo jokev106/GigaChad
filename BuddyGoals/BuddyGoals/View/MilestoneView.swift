@@ -9,38 +9,71 @@ import SwiftUI
 
 struct MilestoneView: View {
     var body: some View {
-        NavigationView {
-            VStack{
-                HStack {
-                    milestoneTimeView(duration: 12)
-                    milestoneTimeView(duration: 11)
-                }.frame(width: 360, height: 50)
-                    .border(width: 1, edges: [.top], color: .gray)
-                Rectangle()
-                    .foregroundColor(.gray)
-                    .frame(width: 400, height: 1)
-                    .padding(.top, 10)
-                    .shadow(color: .black, radius: 2)
-                HStack(alignment:.lastTextBaseline){
+            ZStack {
+                VStack {
+                    NavigationView {
+                        Color.blue.edgesIgnoringSafeArea(.all)
+                            .navigationBarTitle("Milestone", displayMode: .inline)
+                            
+                            
+                    } // Navigation
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.2)
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.06)
+                        .padding(.top, UIScreen.main.bounds.height * 0.01)
+                    HStack(alignment:.lastTextBaseline){
+                        Spacer()
+                        Button(
+                            action: {print("tapped")},
+                            label: {Image(systemName: "plus")})
+                        .padding(.trailing, 30)
+                    }.frame(width: UIScreen.main.bounds.width, height: 10)
+                        .padding()
+                        
+                    VStack{
+                        ChallengeView(challengeName: "Contoh", challengeDetail: "Contoh nih", challengeDifficulty: 3)
+                    }
                     Spacer()
-                    Button(
-                        action: {print("tapped")},
-                        label: {Image(systemName: "plus")})
-                    .padding(.trailing, 30)
-                }.frame(width: 400, height: 20)
-                    .padding()
+                }// VStack
                 
-                VStack{
-                    ChallengeView(challengeName: "Contoh", challengeDetail: "Contoh nih", challengeDifficulty: 3)
+                
+                VStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height * 0.18)
+                        .foregroundColor(.white)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(.gray, lineWidth: 1)
+                            .shadow(color: .gray, radius: 1))
+                    Spacer()
+                } // VStack
+                .padding(.top, UIScreen.main.bounds.height * 0.06)
+                
                     
-                }
-                Spacer()
-            }
-            .navigationTitle("Exercise")
+                VStack (alignment:.leading) {
+                        
+                    Text("Challenge")
+                        .font(.system(size: 40, weight: .bold, design: .default))
+                        .padding(.bottom, -2)
+                        .padding(.top, 20)
+                        .padding(.leading, 20)
+                        
+                        
+                    HStack {
+                        milestoneTimeView(duration: 12)
+                        milestoneTimeView(duration: 11)
+                    } //Hstack
+                    .frame(width: 380, height: 50)
+                    .padding(.top, 10)
+                    .border(width: 1, edges: [.top], color: .gray)
+                    
+                        
+                    Spacer()
+                }// VStack
+                .padding(.top, UIScreen.main.bounds.height * 0.06)
+                
+            } // Zstack
         }
         
-        
-    }
 }
 
 struct MilestoneView_Previews: PreviewProvider {
@@ -59,12 +92,13 @@ struct ChallengeView: View {
     var body: some View {
         ZStack{
             HStack {
-                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                    .frame(width: 160, height: 50)
+                RoundedRectangle(cornerSize: CGSize(width: 20, height: 10))
+                    .frame(width: 100, height: 80)
                     .foregroundColor(.blue)
-                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                    .frame(width: 160, height: 50)
-                    .foregroundColor(.yellow)
+//                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+//                    .frame(width: 160, height: 80)
+//                    .foregroundColor(.white)
+                Spacer()
                 
             }
             HStack {
@@ -75,22 +109,31 @@ struct ChallengeView: View {
                         .font(.system(size: 12, weight: .light, design: .default))
                 }
                 Rectangle()
-                    .frame(width: 240, height: 50)
+                    .frame(width: 288, height: 80)
                     .foregroundColor(.white)
-                Image(systemName: "star")
                 
             }
-            VStack(alignment:.leading) {
-                Text(challengeName)
-                    .font(.system(size: 16, weight: .bold, design: .default))
-                Text(challengeDetail)
-                    .font(.system(size: 12, weight: .light, design: .default))
-            }.frame(width: 200, height: 50, alignment: .leading)
-                .padding(.leading, 20)
+            HStack {
+                VStack(alignment:.leading) {
+                    Text(challengeName)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                    Text(challengeDetail)
+                        .font(.system(size: 14, weight: .light, design: .default))
+                }.frame(width: 200, height: 50, alignment: .leading)
+                    .padding(.leading, 20)
+                Spacer()
+                Image(systemName: "greaterthan")
+                    .frame(width: 20, height: 80)
+                    .padding(.trailing, 20)
+            }
+            .frame(width: 288, height: 80)
+            .padding(.leading, 42)
+            
             
         }
         .contentShape(RoundedRectangle(cornerRadius: 10))
-        .overlay(RoundedRectangle(cornerRadius: 10)
+        .frame(width: 330, height: 80)
+        .overlay(RoundedRectangle(cornerRadius: 20)
             .stroke(.gray, lineWidth: 0.5)
             .shadow(color: .gray, radius: 1))
         .onTapGesture {
