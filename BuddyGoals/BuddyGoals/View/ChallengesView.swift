@@ -16,25 +16,29 @@ struct ChallengesView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-//    //for White Content Navigation Bar
-//    init() {
-//       let navBarAppearance = UINavigationBar.appearance()
-//       navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-//       navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-//    }
+    //for White Content Navigation Bar
+    init() {
+       let navBarAppearance = UINavigationBar.appearance()
+       navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+       navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
 
     var body: some View {
         
         NavigationView {
             
-            VStack {
-                
-                ScrollView {
+            //ScrollView{
+                ZStack {
                     
-                    ZStack {
+                    VStack{
                         primary900
-                            .edgesIgnoringSafeArea(.top)
-                            .frame(height: 200)
+                            .frame(height: 300, alignment: .top)
+                            .ignoresSafeArea(.all)
+                        Spacer()
+                    }
+                    VStack {
+                        
+                        //Spacer(minLength: 10)
                         
                         //Card
                         Button(action: {
@@ -42,25 +46,67 @@ struct ChallengesView: View {
                         }, label: {
                             VStack{
                                 HStack {
-                                    Text("Being Productive")
+                                    Text("Lose 10 Kg in 10 months")
                                         .font(.system(size: 25, weight: .bold))
-                                        .frame(alignment: .leading)
+                                        .frame(alignment: .topTrailing)
                                         .foregroundColor(Color.black)
+
+                                    Spacer()
+
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Text("Edit")
+                                            .font(.system(size: 10))
+                                            .padding(5)
+                                            .background(white)
+                                            .cornerRadius(10)
+                                    })
+
+                                    //Image(systemName: "chevron.right")
+                                        // .padding(.trailing, 10)
+                                        // .foregroundColor(Color.gray)
+                                }
+                                
+                                HStack {
+                                    Rectangle()
+                                        .frame(height:1)
+                                        .padding(5)
+                                }
+                                
+                                HStack {
+                                    
+                                    HStack {
+                                        Text("Durations")
+                                            .foregroundColor(Color.black)
+                                            .bold()
+                                        Spacer()
+                                        Text("12 Weeks")
+                                            .foregroundColor(Color.gray)
+                                    }
+                                    .font(.system(size: 8))
+                                    .padding(7)
+                                    .background(white)
+                                    .cornerRadius(10)
                                     
                                     Spacer()
                                     
-                                    Image(systemName: "chevron.right")
-                                        .padding(.trailing, 10)
-                                        .foregroundColor(Color.gray)
-                                }
-                                
-                                Text("15 Days to go")
+                                    HStack {
+                                        Text("Remaining")
+                                            .foregroundColor(Color.black)
+                                            .bold()
+                                        Spacer()
+                                        Text("15 Days")
+                                            .foregroundColor(Color.gray)
+                                    }
                                     .font(.system(size: 8))
                                     .padding(7)
-                                    .foregroundColor(Color.black)
                                     .background(white)
                                     .cornerRadius(10)
+                                    
+                                }
                                 
+
                             }
                             .padding()
                             .background(.white)
@@ -68,55 +114,87 @@ struct ChallengesView: View {
                         })//Button card
                         .cornerRadius(10)
                         .padding()
+                        .shadow(radius: 5)
                         //Close of Card
                         
-                    } //ZStack
-                    
-                    VStack(spacing:0){
-                        
-                        HStack {
-                            Text("Exercise")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 22.5))
-                                .bold()
-                            Spacer()
-                            Button(action: {
+                        VStack(spacing:-10){
+                            
+                            HStack {
+                                Button(action: {
+                                    
+                                }, label: {
+                                    Image(systemName: "list.triangle")
+                                        .font(.system(size: 20, weight: .bold))
+                                })
+                                Spacer()
+                                Button(action: {
+                                    
+                                }, label: {
+                                    Image(systemName: "plus")
+                                        .font(.system(size: 20, weight: .bold))
+                                })
+                            }.padding(25)
+                            
+                            ScrollView {
                                 
-                            }, label: {
-                                Image(systemName: "plus")
-                                    .font(.system(size: 20, weight: .bold))
-                            })
-                        }.padding()
-                        
-                        //Card
-                        CardView(imageCard: "Stars_4", colorCard: purple, milestone: "abla", destinationCard: "")
-                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
-                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
-                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
-                        CardView(imageCard: "Stars_3", colorCard: blue, milestone: "lol lol abla", destinationCard: "")
-                        //CardView()
-                        //Close of Card
-                        
-                        Spacer()
-
+                                VStack(spacing:-10){
+                                    HStack{
+                                        Text("Exercise")
+                                            .foregroundColor(.gray)
+                                            .font(.system(size: 22.5))
+                                            .bold()
+                                            .padding()
+                                        Spacer()
+                                    }
+                                    
+                                    //Card
+                                    CardView(imageCard: "Stars_4", colorCard: purple, milestone: "abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_3", colorCard: blue, milestone: "abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_1", colorCard: white, milestone: "lol lol abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_2", colorCard: white, milestone: "abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+                                    //Close of Card
+                                }
+                                
+                            }
+                            
+                        } //VStack
+                   
                     } //VStack
-                } //Scrollview
+                    .navigationTitle("Goal")
+                    .toolbar {
+                        ToolbarItemGroup(placement: .navigationBarTrailing){
+                            Button(action: {
+                                //Do action
+                            }, label: {
+                                HStack {
+                                    Image(systemName: "diamond.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                    
+                                    Text("27")
+                                    Text("Rookie")
+                                        .bold()
+                                }
+                                .padding(5)
+                                .font(.system(size: 12.5))
+                                .foregroundColor(whiteDark)
+                                .background(.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 2)
+                            })
+                        }
+                    } //Toolbar
+                    
+                }
                 
-           
-            } //VStack
-            .navigationTitle("Goal")
-//            .toolbar {
-//                ToolbarItemGroup(placement: .navigationBarTrailing){
-//                    Button(action: {
-//                        //Do action
-//                    }, label: {
-//                        Image(systemName: "bell.fill")
-//                            //.foregroundColor(.white)
-//                    })
-//                }
-//            } //Toolbar
-    
+            //}.edgesIgnoringSafeArea(.all)
+            
         } //Navigation View
+        .edgesIgnoringSafeArea(.all)
         
     } //Close of View
     
@@ -131,9 +209,43 @@ private let itemFormatter: DateFormatter = {
 
 struct ChallengesView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengesView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ChallengesView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewInterfaceOrientation(.portrait)
     }
 }
 
 
-
+//baru
+//                      VStack{
+//                            HStack {
+//                                Text("Lose 10 Kg in 10 months")
+//                                    .font(.system(size: 25, weight: .bold))
+//                                    .frame(alignment: .leading)
+//                                    .foregroundColor(Color.black)
+//
+//                                Spacer()
+//
+//                                Button(action: {
+//
+//                                }, label: {
+//                                    Text("Edit")
+//                                        .font(.system(size: 10))
+//                                        .padding(5)
+//                                        .background(white)
+//                                        .cornerRadius(10)
+//                                })
+//
+//                                //Image(systemName: "chevron.right")
+//                                    // .padding(.trailing, 10)
+//                                    // .foregroundColor(Color.gray)
+//                            }
+//
+//                            Text("15 Days to go")
+//                                .font(.system(size: 8))
+//                                .padding(7)
+//                                .foregroundColor(Color.black)
+//                                .background(white)
+//                                .cornerRadius(10)
+//
+//                        }
+//                        .padding()
+//                        .background(.white)
