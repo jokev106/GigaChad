@@ -16,37 +16,38 @@ struct GoalView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
+    //for White Content Navigation Bar
+    init() {
+       let navBarAppearance = UINavigationBar.appearance()
+       navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+       navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     @State var addNewPlanView = false
     
     var body: some View {
+        
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: {self.addNewPlanView.toggle()}) {
-                        Label("Add Item", systemImage: "plus")
-                            .foregroundColor(Color.blue)
-                    }.sheet(isPresented: $addNewPlanView) {
-                        AddPlanView()
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
+            
+            ZStack{
+                primary900
+                    .frame(height: 300, alignment: .top)
+                    .ignoresSafeArea(.all)
+                Spacer()
+                
+                VStack {
+                    
+                } //VStack
+                
+            } //ZStack
+            
+        }//NavigationView
+        .edgesIgnoringSafeArea(.all)
+
+        
+    } //View Close
     
+    //Function
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -91,3 +92,29 @@ struct GoalView_Previews: PreviewProvider {
         GoalView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+
+//List
+//List {
+//    ForEach(items) { item in
+//        NavigationLink {
+//            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+//        } label: {
+//            Text(item.timestamp!, formatter: itemFormatter)
+//        }
+//    }
+//    .onDelete(perform: deleteItems)
+//}
+//.toolbar {
+//    ToolbarItem(placement: .navigationBarTrailing) {
+//        EditButton()
+//    }
+//    ToolbarItem {
+//        Button(action: {self.addNewPlanView.toggle()}) {
+//            Label("Add Item", systemImage: "plus")
+//                .foregroundColor(Color.blue)
+//        }.sheet(isPresented: $addNewPlanView) {
+//            AddPlanView()
+//        }
+//    }
+//}
+//Text("Select an item")
