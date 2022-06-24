@@ -21,7 +21,6 @@
 		B379DED62865B2BD00D1FC7F /* AddActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379DED52865B2BD00D1FC7F /* AddActionView.swift */; };
 		B81DCDFC2865B7020041E677 /* ColorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81DCDFB2865B7020041E677 /* ColorComponent.swift */; };
 		B81DCDFE2865B73A0041E677 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81DCDFD2865B73A0041E677 /* CardView.swift */; };
-		B81DCE002865BDA20041E677 /* tiptip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81DCDFF2865BDA20041E677 /* tiptip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		B379DED52865B2BD00D1FC7F /* AddActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActionView.swift; sourceTree = "<group>"; };
 		B81DCDFB2865B7020041E677 /* ColorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponent.swift; sourceTree = "<group>"; };
 		B81DCDFD2865B73A0041E677 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		B81DCDFF2865BDA20041E677 /* tiptip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tiptip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +176,6 @@
 			children = (
 				B81DCDFB2865B7020041E677 /* ColorComponent.swift */,
 				B81DCDFD2865B73A0041E677 /* CardView.swift */,
-				B81DCDFF2865BDA20041E677 /* tiptip.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				B379DEA92865A96800D1FC7F /* Persistence.swift in Sources */,
 				B379DEAC2865A96800D1FC7F /* BuddyGoals.xcdatamodeld in Sources */,
 				B379DEA22865A96800D1FC7F /* GoalView.swift in Sources */,
-				B81DCE002865BDA20041E677 /* tiptip.swift in Sources */,
 				B379DEA02865A96800D1FC7F /* BuddyGoalsApp.swift in Sources */,
 				B379DED42865B03B00D1FC7F /* NavigationAppearance.swift in Sources */,
 			);
