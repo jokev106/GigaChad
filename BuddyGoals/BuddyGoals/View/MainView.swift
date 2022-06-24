@@ -17,14 +17,14 @@ struct MainView: View {
             
             ChallengesView()
                 .tabItem{
-                    Label("Challanges", systemImage: "checkmark.square.fill")
+                    Label("Goals", systemImage: "checkmark.square.fill")
                 }
 
             ProgressView()
                 .tabItem{
                     Label("Progress", systemImage: "calendar")
                 }
-        }.accentColor(Color("darkpurpleUIColor"))
+        }.accentColor(primary900)
     }
 }
 
