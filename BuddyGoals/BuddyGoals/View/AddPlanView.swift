@@ -1,13 +1,13 @@
 //
-//  AddMilestoneView.swift
+//  AddPlanView.swift
 //  BuddyGoals
 //
-//  Created by Jonathan Kevin on 21/06/22.
+//  Created by Jonathan Kevin on 24/06/22.
 //
 
 import SwiftUI
 
-struct AddMilestoneView: View {
+struct AddPlanView: View {
     
     //    @Environment(\.dismiss) var dismissSheetView
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
@@ -67,13 +67,13 @@ struct AddMilestoneView: View {
                     .foregroundColor(Color.white)
                 }//navigationView
                 .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
-            }//Vstack Line 16
+            }//Vstack Line 23
         }//geometryReader
     }//bodyView
 }
 
-struct AddMilestoneView_Previews: PreviewProvider {
+struct AddPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        AddMilestoneView()
+        AddPlanView()
     }
 }
