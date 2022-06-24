@@ -15,7 +15,7 @@ struct ChallengesView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
+
     //for White Content Navigation Bar
     init() {
        let navBarAppearance = UINavigationBar.appearance()
@@ -23,10 +23,13 @@ struct ChallengesView: View {
        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
 
+    //Untuk modal view add new challenge
+    @State var addNewPlanView = false
+
     var body: some View {
         
         NavigationView {
-            
+
             //ScrollView{
                 ZStack {
                     
@@ -35,6 +38,27 @@ struct ChallengesView: View {
                             .frame(height: 300, alignment: .top)
                             .ignoresSafeArea(.all)
                         Spacer()
+            List {
+                ForEach(items) { item in
+                    NavigationLink {
+                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                    } label: {
+                        Text(item.timestamp!, formatter: itemFormatter)
+                    }
+                }
+                .onDelete(perform: deleteItems)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                        .foregroundColor(Color.blue)
+                }
+                ToolbarItem {
+                    Button(action: {self.addNewPlanView.toggle()}) {
+                        Label("Add Item", systemImage: "plus")
+                            .foregroundColor(Color.blue)
+                    }.sheet(isPresented: $addNewPlanView) {
+                        AddPlanView()
                     }
                     VStack {
                         
