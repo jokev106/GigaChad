@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32A67DD286592C400F2B487 /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A67DC286592C400F2B487 /* AddPlanView.swift */; };
+		B32A67DF2865963D00F2B487 /* AddActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A67DE2865963D00F2B487 /* AddActionView.swift */; };
 		B33F15F62860750C0053A915 /* BuddyGoalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F15F52860750C0053A915 /* BuddyGoalsApp.swift */; };
 		B33F15F82860750C0053A915 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F15F72860750C0053A915 /* ChallengesView.swift */; };
 		B33F15FA2860750D0053A915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33F15F92860750D0053A915 /* Assets.xcassets */; };
@@ -16,6 +18,9 @@
 		B33F160C2860750D0053A915 /* BuddyGoalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F160B2860750D0053A915 /* BuddyGoalsTests.swift */; };
 		B33F16162860750D0053A915 /* BuddyGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16152860750D0053A915 /* BuddyGoalsUITests.swift */; };
 		B33F16182860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16172860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift */; };
+		B33F162B2861B5500053A915 /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F162A2861B5500053A915 /* DatePickerTextField.swift */; };
+		B33F162D2861B57D0053A915 /* NavigationAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F162C2861B57D0053A915 /* NavigationAppearance.swift */; };
+		B33F16332862FF860053A915 /* RepeatScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16322862FF860053A915 /* RepeatScheduleView.swift */; };
 		B88665332860C630000FAA20 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665322860C630000FAA20 /* ProgressView.swift */; };
 		B88665352860C8D2000FAA20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665342860C8D2000FAA20 /* MainView.swift */; };
 		B88665372860CA8F000FAA20 /* TravenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665362860CA8F000FAA20 /* TravenView.swift */; };
@@ -39,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B32A67DC286592C400F2B487 /* AddPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		B32A67DE2865963D00F2B487 /* AddActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActionView.swift; sourceTree = "<group>"; };
 		B33F15F22860750C0053A915 /* BuddyGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33F15F52860750C0053A915 /* BuddyGoalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsApp.swift; sourceTree = "<group>"; };
 		B33F15F72860750C0053A915 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
@@ -51,6 +58,9 @@
 		B33F16112860750D0053A915 /* BuddyGoalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuddyGoalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33F16152860750D0053A915 /* BuddyGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsUITests.swift; sourceTree = "<group>"; };
 		B33F16172860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B33F162A2861B5500053A915 /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
+		B33F162C2861B57D0053A915 /* NavigationAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAppearance.swift; sourceTree = "<group>"; };
+		B33F16322862FF860053A915 /* RepeatScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatScheduleView.swift; sourceTree = "<group>"; };
 		B88665322860C630000FAA20 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B88665342860C8D2000FAA20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B88665362860CA8F000FAA20 /* TravenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravenView.swift; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 		B33F15F42860750C0053A915 /* BuddyGoals */ = {
 			isa = PBXGroup;
 			children = (
+				B33F16292861B5380053A915 /* Services */,
 				B886653A2860CB5B000FAA20 /* ViewModel */,
 				B88665392860CB52000FAA20 /* View */,
 				B88665382860CB4A000FAA20 /* Model */,
@@ -139,6 +150,15 @@
 			path = BuddyGoalsUITests;
 			sourceTree = "<group>";
 		};
+		B33F16292861B5380053A915 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B33F162A2861B5500053A915 /* DatePickerTextField.swift */,
+				B33F162C2861B57D0053A915 /* NavigationAppearance.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		B88665382860CB4A000FAA20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +174,9 @@
 				B88665342860C8D2000FAA20 /* MainView.swift */,
 				B88665362860CA8F000FAA20 /* TravenView.swift */,
 				B88665322860C630000FAA20 /* ProgressView.swift */,
+				B33F16322862FF860053A915 /* RepeatScheduleView.swift */,
+				B32A67DC286592C400F2B487 /* AddPlanView.swift */,
+				B32A67DE2865963D00F2B487 /* AddActionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,10 +322,15 @@
 				B88665372860CA8F000FAA20 /* TravenView.swift in Sources */,
 				B33F15FF2860750D0053A915 /* Persistence.swift in Sources */,
 				B88665352860C8D2000FAA20 /* MainView.swift in Sources */,
+				B32A67DD286592C400F2B487 /* AddPlanView.swift in Sources */,
 				B33F16022860750D0053A915 /* BuddyGoals.xcdatamodeld in Sources */,
+				B33F162D2861B57D0053A915 /* NavigationAppearance.swift in Sources */,
+				B33F162B2861B5500053A915 /* DatePickerTextField.swift in Sources */,
 				B88665332860C630000FAA20 /* ProgressView.swift in Sources */,
 				B33F15F82860750C0053A915 /* ChallengesView.swift in Sources */,
+				B33F16332862FF860053A915 /* RepeatScheduleView.swift in Sources */,
 				B33F15F62860750C0053A915 /* BuddyGoalsApp.swift in Sources */,
+				B32A67DF2865963D00F2B487 /* AddActionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

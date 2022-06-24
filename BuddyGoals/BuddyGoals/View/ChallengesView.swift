@@ -15,6 +15,9 @@ struct ChallengesView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    //Untuk modal view add new challenge
+    @State var addNewPlanView = false
 
     var body: some View {
         NavigationView {
@@ -31,10 +34,14 @@ struct ChallengesView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
+                        .foregroundColor(Color.blue)
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {self.addNewPlanView.toggle()}) {
                         Label("Add Item", systemImage: "plus")
+                            .foregroundColor(Color.blue)
+                    }.sheet(isPresented: $addNewPlanView) {
+                        AddPlanView()
                     }
                 }
             }
