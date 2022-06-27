@@ -8,16 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B33F15F62860750C0053A915 /* BuddyGoalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F15F52860750C0053A915 /* BuddyGoalsApp.swift */; };
-		B33F15F82860750C0053A915 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F15F72860750C0053A915 /* ChallengesView.swift */; };
-		B33F15FA2860750D0053A915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33F15F92860750D0053A915 /* Assets.xcassets */; };
-		B33F15FD2860750D0053A915 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33F15FC2860750D0053A915 /* Preview Assets.xcassets */; };
 		B33F15FF2860750D0053A915 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F15FE2860750D0053A915 /* Persistence.swift */; };
-		B33F16022860750D0053A915 /* BuddyGoals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B33F16002860750D0053A915 /* BuddyGoals.xcdatamodeld */; };
-		B33F160C2860750D0053A915 /* BuddyGoalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F160B2860750D0053A915 /* BuddyGoalsTests.swift */; };
-		B33F16162860750D0053A915 /* BuddyGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16152860750D0053A915 /* BuddyGoalsUITests.swift */; };
-		B33F16182860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F16172860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift */; };
+		B33F16022860750D0053A915 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B88665332860C630000FAA20 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665322860C630000FAA20 /* ProgressView.swift */; };
-		B88665352860C8D2000FAA20 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665342860C8D2000FAA20 /* MainView.swift */; };
 		B88665372860CA8F000FAA20 /* TravenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665362860CA8F000FAA20 /* TravenView.swift */; };
 		F7442D292861B5FE00F2A4DA /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442D282861B5FE00F2A4DA /* MilestoneView.swift */; };
 		F799B49B2865B11F0019370F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B49A2865B11F0019370F /* StringExtension.swift */; };
@@ -28,6 +21,8 @@
 		F799B4A72865B2900019370F /* RepeatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B4A62865B2900019370F /* RepeatAction.swift */; };
 		F799B4A92865B2C20019370F /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B4A82865B2C20019370F /* Rank.swift */; };
 		F799B4AB2866BC5E0019370F /* Dailies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B4AA2866BC5E0019370F /* Dailies.swift */; };
+		F7F4DCBA2869A48B0032450A /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4DCB92869A48B0032450A /* ChallengesView.swift */; };
+		F7F4DCBC2869A4CF0032450A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F4DCBB2869A4CF0032450A /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,20 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B33F15F22860750C0053A915 /* BuddyGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33F15F52860750C0053A915 /* BuddyGoalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsApp.swift; sourceTree = "<group>"; };
-		B33F15F72860750C0053A915 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		B33F15F92860750D0053A915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B33F15FC2860750D0053A915 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B33F15FE2860750D0053A915 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		B33F16012860750D0053A915 /* BuddyGoals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuddyGoals.xcdatamodel; sourceTree = "<group>"; };
-		B33F16072860750D0053A915 /* BuddyGoalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuddyGoalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B33F160B2860750D0053A915 /* BuddyGoalsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsTests.swift; sourceTree = "<group>"; };
-		B33F16112860750D0053A915 /* BuddyGoalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuddyGoalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B33F16152860750D0053A915 /* BuddyGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsUITests.swift; sourceTree = "<group>"; };
-		B33F16172860750D0053A915 /* BuddyGoalsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyGoalsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B88665322860C630000FAA20 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		B88665342860C8D2000FAA20 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B88665362860CA8F000FAA20 /* TravenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravenView.swift; sourceTree = "<group>"; };
 		F7442D282861B5FE00F2A4DA /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
 		F799B49A2865B11F0019370F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -72,6 +57,8 @@
 		F799B4A62865B2900019370F /* RepeatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatAction.swift; sourceTree = "<group>"; };
 		F799B4A82865B2C20019370F /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		F799B4AA2866BC5E0019370F /* Dailies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dailies.swift; sourceTree = "<group>"; };
+		F7F4DCB92869A48B0032450A /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		F7F4DCBB2869A4CF0032450A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,15 +93,13 @@
 				B379DEB42865A96800D1FC7F /* BuddyGoalsTests */,
 				B379DEBE2865A96800D1FC7F /* BuddyGoalsUITests */,
 				B379DE9D2865A96800D1FC7F /* Products */,
+				F7F4DCB82869A3F80032450A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
 		B379DE9D2865A96800D1FC7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B379DE9C2865A96800D1FC7F /* BuddyGoals.app */,
-				B379DEB12865A96800D1FC7F /* BuddyGoalsTests.xctest */,
-				B379DEBB2865A96800D1FC7F /* BuddyGoalsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,28 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				F799B4992865B0FE0019370F /* Objects */,
-				B886653A2860CB5B000FAA20 /* ViewModel */,
 				B88665392860CB52000FAA20 /* View */,
-				B88665382860CB4A000FAA20 /* Model */,
 				B33F15F52860750C0053A915 /* BuddyGoalsApp.swift */,
 				B33F15F92860750D0053A915 /* Assets.xcassets */,
-				B33F15FB2860750D0053A915 /* Preview Content */,
 			);
 			path = BuddyGoals;
-			sourceTree = "<group>";
-		};
-		B379DEA52865A96800D1FC7F /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B379DEA62865A96800D1FC7F /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		B379DEB42865A96800D1FC7F /* BuddyGoalsTests */ = {
 			isa = PBXGroup;
 			children = (
-				B379DEB52865A96800D1FC7F /* BuddyGoalsTests.swift */,
 			);
 			path = BuddyGoalsTests;
 			sourceTree = "<group>";
@@ -152,37 +125,20 @@
 		B379DEBE2865A96800D1FC7F /* BuddyGoalsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B379DEBF2865A96800D1FC7F /* BuddyGoalsUITests.swift */,
-				B379DEC12865A96800D1FC7F /* BuddyGoalsUITestsLaunchTests.swift */,
 			);
 			path = BuddyGoalsUITests;
-			sourceTree = "<group>";
-		};
-		B379DECE2865A97A00D1FC7F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B33F16002860750D0053A915 /* BuddyGoals.xcdatamodeld */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B88665392860CB52000FAA20 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B33F15F72860750C0053A915 /* ChallengesView.swift */,
-				B88665342860C8D2000FAA20 /* MainView.swift */,
+				F7F4DCBB2869A4CF0032450A /* MainView.swift */,
 				B88665362860CA8F000FAA20 /* TravenView.swift */,
 				B88665322860C630000FAA20 /* ProgressView.swift */,
 				F7442D282861B5FE00F2A4DA /* MilestoneView.swift */,
+				F7F4DCB92869A48B0032450A /* ChallengesView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B379DECF2865A98100D1FC7F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F799B4992865B0FE0019370F /* Objects */ = {
@@ -198,6 +154,14 @@
 				F799B4AA2866BC5E0019370F /* Dailies.swift */,
 			);
 			path = Objects;
+			sourceTree = "<group>";
+		};
+		F7F4DCB82869A3F80032450A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B33F15FE2860750D0053A915 /* Persistence.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +181,6 @@
 			);
 			name = BuddyGoals;
 			productName = BuddyGoals;
-			productReference = B379DE9C2865A96800D1FC7F /* BuddyGoals.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B379DEB02865A96800D1FC7F /* BuddyGoalsTests */ = {
@@ -235,7 +198,6 @@
 			);
 			name = BuddyGoalsTests;
 			productName = BuddyGoalsTests;
-			productReference = B379DEB12865A96800D1FC7F /* BuddyGoalsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B379DEBA2865A96800D1FC7F /* BuddyGoalsUITests */ = {
@@ -253,7 +215,6 @@
 			);
 			name = BuddyGoalsUITests;
 			productName = BuddyGoalsUITests;
-			productReference = B379DEBB2865A96800D1FC7F /* BuddyGoalsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -304,8 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B379DEA72865A96800D1FC7F /* Preview Assets.xcassets in Resources */,
-				B379DEA42865A96800D1FC7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,15 +294,15 @@
 				F7442D292861B5FE00F2A4DA /* MilestoneView.swift in Sources */,
 				F799B4AB2866BC5E0019370F /* Dailies.swift in Sources */,
 				F799B4A92865B2C20019370F /* Rank.swift in Sources */,
+				F7F4DCBA2869A48B0032450A /* ChallengesView.swift in Sources */,
 				B33F15FF2860750D0053A915 /* Persistence.swift in Sources */,
 				F799B4A72865B2900019370F /* RepeatAction.swift in Sources */,
-				B88665352860C8D2000FAA20 /* MainView.swift in Sources */,
 				F799B4A32865B2170019370F /* Goal.swift in Sources */,
 				F799B4A12865B1F20019370F /* Plan.swift in Sources */,
-				B33F16022860750D0053A915 /* BuddyGoals.xcdatamodeld in Sources */,
+				F7F4DCBC2869A4CF0032450A /* MainView.swift in Sources */,
+				B33F16022860750D0053A915 /* (null) in Sources */,
 				F799B49B2865B11F0019370F /* StringExtension.swift in Sources */,
 				B88665332860C630000FAA20 /* ProgressView.swift in Sources */,
-				B33F15F82860750C0053A915 /* ChallengesView.swift in Sources */,
 				B33F15F62860750C0053A915 /* BuddyGoalsApp.swift in Sources */,
 				F799B49F2865B1BC0019370F /* Actionable.swift in Sources */,
 			);
@@ -353,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B379DEB62865A96800D1FC7F /* BuddyGoalsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,8 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B379DEC22865A96800D1FC7F /* BuddyGoalsUITestsLaunchTests.swift in Sources */,
-				B379DEC02865A96800D1FC7F /* BuddyGoalsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,19 +622,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B379DEAA2865A96800D1FC7F /* BuddyGoals.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B379DEAB2865A96800D1FC7F /* BuddyGoals.xcdatamodel */,
-			);
-			currentVersion = B379DEAB2865A96800D1FC7F /* BuddyGoals.xcdatamodel */;
-			path = BuddyGoals.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B379DE942865A96800D1FC7F /* Project object */;
 }
