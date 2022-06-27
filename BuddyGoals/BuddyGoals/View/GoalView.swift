@@ -128,13 +128,16 @@ struct GoalView: View {
                                     Image(systemName: "list.triangle")
                                         .font(.system(size: 20, weight: .bold))
                                 })
+                                
                                 Spacer()
-                                Button(action: {
-                                    
-                                }, label: {
+                                
+                                Button(action: {self.addNewPlanView.toggle()}) {
                                     Image(systemName: "plus")
                                         .font(.system(size: 20, weight: .bold))
-                                })
+                                }.sheet(isPresented: $addNewPlanView) {
+                                    AddPlanView()
+                                }
+                                
                             }.padding(25)
                             
                             ScrollView {
