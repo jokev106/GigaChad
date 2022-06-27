@@ -2,20 +2,22 @@
 //  ContentView.swift
 //  BuddyGoals
 //
-//  Created by Jonathan Kevin on 20/06/22.
+//  Created by Jonathan Kevin on 24/06/22.
 //
 
 import SwiftUI
 import CoreData
 
-struct ChallengesView: View {
+struct GoalView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
+    @State var addNewPlanView = false
+    
     var body: some View {
         NavigationView {
             List {
@@ -33,21 +35,23 @@ struct ChallengesView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {self.addNewPlanView.toggle()}) {
                         Label("Add Item", systemImage: "plus")
+                            .foregroundColor(Color.blue)
+                    }.sheet(isPresented: $addNewPlanView) {
+                        AddPlanView()
                     }
                 }
             }
             Text("Select an item")
         }
-        
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -58,11 +62,11 @@ struct ChallengesView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -82,8 +86,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ChallengesView_Previews: PreviewProvider {
+struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengesView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        GoalView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
