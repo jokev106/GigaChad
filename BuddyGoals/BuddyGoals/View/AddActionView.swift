@@ -156,7 +156,7 @@ struct AddActionView: View {
                     })
                     .foregroundColor(Color.white)
                 }//navigationView
-                .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
+//                .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
             }//Vstack Line 16
         }//geometryReader
     }

@@ -13,6 +13,10 @@
 		B88665332860C630000FAA20 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665322860C630000FAA20 /* ProgressView.swift */; };
 		B88665372860CA8F000FAA20 /* TravenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88665362860CA8F000FAA20 /* TravenView.swift */; };
 		F7442D292861B5FE00F2A4DA /* MilestoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442D282861B5FE00F2A4DA /* MilestoneView.swift */; };
+		F761EF5B2869A94C0051EC0A /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761EF5A2869A94C0051EC0A /* GoalView.swift */; };
+		F761EF5E2869A9660051EC0A /* AddActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761EF5C2869A9660051EC0A /* AddActionView.swift */; };
+		F761EF5F2869A9660051EC0A /* AddPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761EF5D2869A9660051EC0A /* AddPlanView.swift */; };
+		F761EF622869AA2B0051EC0A /* BuddyGoals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F761EF602869AA2B0051EC0A /* BuddyGoals.xcdatamodeld */; };
 		F799B49B2865B11F0019370F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B49A2865B11F0019370F /* StringExtension.swift */; };
 		F799B49F2865B1BC0019370F /* Actionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B49E2865B1BC0019370F /* Actionable.swift */; };
 		F799B4A12865B1F20019370F /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799B4A02865B1F20019370F /* Plan.swift */; };
@@ -49,6 +53,10 @@
 		B88665322860C630000FAA20 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		B88665362860CA8F000FAA20 /* TravenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravenView.swift; sourceTree = "<group>"; };
 		F7442D282861B5FE00F2A4DA /* MilestoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneView.swift; sourceTree = "<group>"; };
+		F761EF5A2869A94C0051EC0A /* GoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		F761EF5C2869A9660051EC0A /* AddActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActionView.swift; sourceTree = "<group>"; };
+		F761EF5D2869A9660051EC0A /* AddPlanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlanView.swift; sourceTree = "<group>"; };
+		F761EF612869AA2B0051EC0A /* BuddyGoals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuddyGoals.xcdatamodel; sourceTree = "<group>"; };
 		F799B49A2865B11F0019370F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F799B49E2865B1BC0019370F /* Actionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actionable.swift; sourceTree = "<group>"; };
 		F799B4A02865B1F20019370F /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
@@ -107,6 +115,8 @@
 		B379DE9E2865A96800D1FC7F /* BuddyGoals */ = {
 			isa = PBXGroup;
 			children = (
+				F761EF602869AA2B0051EC0A /* BuddyGoals.xcdatamodeld */,
+				B33F15FE2860750D0053A915 /* Persistence.swift */,
 				F799B4992865B0FE0019370F /* Objects */,
 				B88665392860CB52000FAA20 /* View */,
 				B33F15F52860750C0053A915 /* BuddyGoalsApp.swift */,
@@ -132,6 +142,9 @@
 		B88665392860CB52000FAA20 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F761EF5C2869A9660051EC0A /* AddActionView.swift */,
+				F761EF5D2869A9660051EC0A /* AddPlanView.swift */,
+				F761EF5A2869A94C0051EC0A /* GoalView.swift */,
 				F7F4DCBB2869A4CF0032450A /* MainView.swift */,
 				B88665362860CA8F000FAA20 /* TravenView.swift */,
 				B88665322860C630000FAA20 /* ProgressView.swift */,
@@ -159,7 +172,6 @@
 		F7F4DCB82869A3F80032450A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				B33F15FE2860750D0053A915 /* Persistence.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -290,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F799B4A52865B2440019370F /* User.swift in Sources */,
+				F761EF5B2869A94C0051EC0A /* GoalView.swift in Sources */,
 				B88665372860CA8F000FAA20 /* TravenView.swift in Sources */,
 				F7442D292861B5FE00F2A4DA /* MilestoneView.swift in Sources */,
 				F799B4AB2866BC5E0019370F /* Dailies.swift in Sources */,
@@ -300,11 +313,14 @@
 				F799B4A32865B2170019370F /* Goal.swift in Sources */,
 				F799B4A12865B1F20019370F /* Plan.swift in Sources */,
 				F7F4DCBC2869A4CF0032450A /* MainView.swift in Sources */,
+				F761EF5E2869A9660051EC0A /* AddActionView.swift in Sources */,
+				F761EF622869AA2B0051EC0A /* BuddyGoals.xcdatamodeld in Sources */,
 				B33F16022860750D0053A915 /* (null) in Sources */,
 				F799B49B2865B11F0019370F /* StringExtension.swift in Sources */,
 				B88665332860C630000FAA20 /* ProgressView.swift in Sources */,
 				B33F15F62860750C0053A915 /* BuddyGoalsApp.swift in Sources */,
 				F799B49F2865B1BC0019370F /* Actionable.swift in Sources */,
+				F761EF5F2869A9660051EC0A /* AddPlanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +638,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F761EF602869AA2B0051EC0A /* BuddyGoals.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F761EF612869AA2B0051EC0A /* BuddyGoals.xcdatamodel */,
+			);
+			currentVersion = F761EF612869AA2B0051EC0A /* BuddyGoals.xcdatamodel */;
+			path = BuddyGoals.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B379DE942865A96800D1FC7F /* Project object */;
 }

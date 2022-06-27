@@ -65,7 +65,7 @@ struct AddPlanView: View {
                     })
                     .foregroundColor(Color.white)
                 }//navigationView
-                .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
+//                .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
             }//Vstack Line 23
         }//geometryReader
     }//bodyView

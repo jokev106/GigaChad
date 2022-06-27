@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProgressView: View {
+struct TravenView: View {
     //@EnvironmentObject var progress: Lol
     
     var body: some View {
@@ -15,7 +15,7 @@ struct ProgressView: View {
     }
 }
 
-struct ProgressView_Previews: PreviewProvider {
+struct TravenView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressView()
     }
