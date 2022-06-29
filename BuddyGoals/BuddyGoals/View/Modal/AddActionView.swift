@@ -12,6 +12,9 @@ struct AddActionView: View {
     //modal view(presentation) mode
     @Environment(\.presentationMode) var presentationMode:Binding<PresentationMode>
     
+    var action: Actionable?
+    var planId: UUID?
+    
     //var for form input
     @State private var actionTitle:  String = ""
     @State private var actionCommitment:  String = ""
@@ -20,20 +23,29 @@ struct AddActionView: View {
     @State private var scheduleDatePicker = Date()
     @State private var repeatPicker: String = "Daily"
     
+    
     let repeatOptions: [String] = [
         "Never", "Daily", "Weekdays", "Weekends", "Weekly", "Biweekly", "Monthly", "Every 3 Months", "Every 6 Months", "Yearly"
     ]
     
     @State var isTapped = false
+    @EnvironmentObject var activityToday : Dailies
     
     var body: some View {
         GeometryReader{ geo in
-            
             VStack{
-                
                 NavigationView{
                     Form{
                         //Mission title set up section
+//                        Section (header: Text("Title")
+//                                    .foregroundColor(Color.blue)
+//                                    .bold()
+//                        ){
+//                            TextField("Ex: Morning Run", text: $actionTitle)
+//                                .padding(.all, 7.0)
+//                                .foregroundColor(Color.black)
+//                            //                            .padding(.horizontal)
+//                        }
                         Section (header: Text("Title")
                                     .foregroundColor(Color.blue)
                                     .bold()
@@ -150,21 +162,31 @@ struct AddActionView: View {
                     }) {
                         Text("Cancel").bold()
                     }, trailing: Button(action: {
+//                        let targetPlan = activityToday.goal.plans.filter({$0.id == planId})[0]
+//                        var targetAction = targetPlan.actions.filter({$0.id == action?.id})[0]
+//                        targetAction.action = $actionTitle.wrappedValue
                         
+                        activityToday.updateAction(planId: planId!, actionId: action!.id, action: $actionTitle.wrappedValue)
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Create").bold()
                     })
                     .foregroundColor(Color.white)
                 }//navigationView
 //                .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
-            }//Vstack Line 16
+            }
+            .onAppear {
+                if let action = action {
+                    actionTitle = action.action
+                }
+            }
+            //Vstack Line 16
         }//geometryReader
     }
-
 }
 
 struct AddActionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddActionView()
+        AddActionView(action: Actionable(action: "Demo", time: "10:00", place: "Demo", startDate: Date(), repeats: .daily, difficulty: .beginner))
     }
 }

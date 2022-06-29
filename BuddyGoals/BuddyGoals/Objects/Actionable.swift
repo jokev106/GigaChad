@@ -8,9 +8,12 @@
 import Foundation
 
 
-struct Actionable {
+class Actionable: Identifiable {
+    var id = UUID()
+    
+    
     // ID = GoalID + PlanID + ActionID
-    let actionId : String
+//    let actionId = UUID()
     var action : String
     var time : String // No time data type (?)
     var place : String
@@ -21,24 +24,8 @@ struct Actionable {
     var isDoneToday : Bool = false
     var isDeleted : Bool = false
     
-    init(action : String, time : String, place : String, startDate : Date, repeats : RepeatAction, difficulty : Rank, plan : PlanClass) {
-        func createID(_ plan : PlanClass) -> String {
-            let actions = plan.actions
-            if actions.count > 1  {
-                let previousActionID = actions[actions.count-1].actionId
-                let actionNumber = Int(previousActionID[previousActionID.count - 3..<previousActionID.count])!
-                if actionNumber >= 100 {
-                    return plan.planId + "A" + String(actionNumber + 1)
-                } else if actionNumber >= 10 {
-                    return plan.planId + "A0" + String(actionNumber + 1)
-                } else {
-                    return plan.planId + "A00" + String(actionNumber + 1)
-                }
-            }
-            return plan.planId + "A001"
-        }
+    init(action : String, time : String, place : String, startDate : Date, repeats : RepeatAction, difficulty : Rank) {
         
-        self.actionId = createID(plan)
         self.action = action
         self.time = time
         self.place = place

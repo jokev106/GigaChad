@@ -22,7 +22,7 @@ class UserClass {
     }
     
     func addNewGoal(title : String, duration : Int, startDate : Date, rank : Rank) {
-        self.goals.append(GoalClass(title: title, duration: duration, startDate: startDate, rank: rank, user: self))
+        self.goals.append(GoalClass(title: title, duration: duration, startDate: startDate, rank: rank))
     }
     
     

@@ -16,17 +16,14 @@ import SwiftUI
 //}
 struct CardView: View {
     
-    @State var imageCard : String
-    @State var colorCard : Color
-    @State var milestone : String
-    @State var destinationCard : String
+    var imageCard : String
+    var colorCard : Color
+    var milestone : String
+    var destinationCard : String
     
     var body: some View {
         
         //Card
-        Button(action: {
-            //DO action
-        }, label: {
             HStack{
                 VStack{
                     Image(imageCard)
@@ -55,7 +52,6 @@ struct CardView: View {
             .background(.white)
             
 
-        })//Button card
         .cornerRadius(10)
         .padding()
         .shadow(color: .gray, radius: 5)

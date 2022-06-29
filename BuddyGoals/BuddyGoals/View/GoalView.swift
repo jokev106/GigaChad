@@ -25,6 +25,9 @@ struct GoalView: View {
     
     @State var addNewPlanView = false
     
+    @EnvironmentObject var activityToday : Dailies
+    
+    
     var body: some View {
         
         NavigationView {
@@ -48,10 +51,11 @@ struct GoalView: View {
                         }, label: {
                             VStack{
                                 HStack {
-                                    Text("Lose 10 Kg in 10 months")
+                                    Text(activityToday.todaysPlanAction.filter({$0.key.title == "Olahraga"})[0].value.filter({$0.place == "Kompleks"})[0].action)
                                         .font(.system(size: 25, weight: .bold))
                                         .frame(alignment: .topTrailing)
                                         .foregroundColor(Color.black)
+//                                    Text(activityToday.goal.plans.filter({$0.title == "Olahraga"})[0].actions.filter({$0.place == "Kompleks"})[0].action)
 
                                     Spacer()
 
@@ -83,7 +87,7 @@ struct GoalView: View {
                                             .foregroundColor(Color.black)
                                             .bold()
                                         Spacer()
-                                        Text("12 Weeks")
+                                        Text("\(activityToday.goal.duration) Weeks")
                                             .foregroundColor(Color.gray)
                                     }
                                     .font(.system(size: 8))
@@ -131,40 +135,21 @@ struct GoalView: View {
                                 
                                 Spacer()
                                 
-                                Button(action: {self.addNewPlanView.toggle()}) {
+                                Button(action: {
+//                                    activityToday.goal.addNewPlan(title: "Tidur")
+                                    activityToday.todaysPlanAction[PlanClass(title: "Tidur", actions: [])] = []
+                                    let _ = print(activityToday.todaysPlanAction.count)
+                                }) {
                                     Image(systemName: "plus")
                                         .font(.system(size: 20, weight: .bold))
-                                }.sheet(isPresented: $addNewPlanView) {
-                                    AddPlanView()
                                 }
+//                                }.sheet(isPresented: $addNewPlanView) {
+//                                    AddPlanView()
+//                                }
                                 
                             }.padding(25)
                             
-                            ScrollView {
-                                
-                                VStack(spacing:-10){
-                                    HStack{
-                                        Text("Exercise")
-                                            .foregroundColor(.gray)
-                                            .font(.system(size: 22.5))
-                                            .bold()
-                                            .padding()
-                                        Spacer()
-                                    }
-                                    
-                                    //Card
-                                    CardView(imageCard: "Stars_4", colorCard: purple, milestone: "abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_3", colorCard: blue, milestone: "abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_1", colorCard: white, milestone: "lol lol abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_2", colorCard: white, milestone: "abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-                                    CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-                                    //Close of Card
-                                }
-                                
-                            }
+                            ScrollPlanView()
                             
                         } //VStack
                    
@@ -247,6 +232,7 @@ private let itemFormatter: DateFormatter = {
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
         GoalView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(Dailies())
     }
 }
 
@@ -275,3 +261,80 @@ struct GoalView_Previews: PreviewProvider {
 //    }
 //}
 //Text("Select an item")
+
+struct PlanView: View {
+    
+    var plan : PlanClass
+    var planActions : [Actionable]
+    
+//    init(plan : PlanClass, planAction : [Actionable]) {
+//        self.plan = plan
+//        self.planActions = planAction
+//    }
+    
+    var body: some View {
+        VStack(spacing:-10){
+                HStack{
+                    Text(plan.title)
+                        .foregroundColor(.gray)
+                        .font(.system(size: 22.5))
+                        .bold()
+                        .padding()
+                    Spacer()
+                }
+                let _ = print("AAAAAAA")
+                ForEach(planActions) { action in
+                    let _ = print("action.action")
+                    NavigationLink(destination: AddActionView(action : action, planId: plan.id), label: {
+                        CardView(imageCard: "Stars_4", colorCard: purple, milestone: action.action, destinationCard: "")
+                    })
+    //                Text(action.action)
+                }
+            
+            
+            //Card
+//            CardView(imageCard: "Stars_4", colorCard: purple, milestone: "abla", destinationCard: "")
+//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+//            CardView(imageCard: "Stars_3", colorCard: blue, milestone: "abla", destinationCard: "")
+//            CardView(imageCard: "Stars_1", colorCard: white, milestone: "lol lol abla", destinationCard: "")
+//            CardView(imageCard: "Stars_2", colorCard: white, milestone: "abla", destinationCard: "")
+//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
+            //Close of Card
+        }
+    }
+}
+
+struct ScrollPlanView: View {
+    
+    @EnvironmentObject var activityToday : Dailies
+    
+    var body: some View {
+        ScrollView {
+            ForEach(Array(activityToday.todaysPlanAction.keys)) { key in
+                PlanView(plan: key, planActions: activityToday.todaysPlanAction[key]!)
+                ForEach(activityToday.todaysPlanAction[key]!) { action in
+                                    Text(action.action)
+                                }
+                let _ = print("Masuk")
+            }
+//            ForEach(0..<activityToday.goal.plans.count){ index in
+//                PlanView(py<Actionable>)') cannot conform to 'Hashable'lan: activityToday.goal.plans[index], planActions: activityToday.goal.plans[index].actions)
+//                ForEach(activityToday.goal.plans[index].actions) { action in
+//                    Text(action.action)
+//                }
+////                    let objectMirror = Mirror(reflecting: action)
+////                    let properties = objectMirror.childrenlizer
+////
+////                    ForEach(Array(properties)) { property in
+////
+////                      let _ = print("\(property.label!) = \(property.value)")
+////
+////                    }
+////               Text(activityToday.todaysPlanAction.filter({$0.key.title == "Olahraga"})[0].value.filter({$0.place == "Kompleks"})[0].action)
+////                Text(activityToday.todaysPlanAction[plan]![0].action)
+//            }
+        }
+    }
+}

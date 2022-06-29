@@ -7,8 +7,9 @@
 
 import Foundation
 
-class GoalClass {
-    let goalId : String
+class GoalClass : Identifiable {
+    
+    let id = UUID()
     var title : String
     var duration : Int // in weeks
     var startDate : Date
@@ -18,31 +19,13 @@ class GoalClass {
     var endDate : Date = Date.now
     var isDeleted : Bool = false
     
-    init(title : String, duration : Int, startDate : Date, rank : Rank, user : UserClass) {
+    init(title : String, duration : Int, startDate : Date, rank : Rank, plans : [PlanClass] = []) {
         
-        func createID(_ user : UserClass) -> String {
-            let goals = user.goals
-            if goals.count > 1  {
-                let previousGoalID = goals[goals.count-1].goalId
-                // Dibuat nanti di main app
-                let goalNumber = Int(previousGoalID[previousGoalID.count - 3..<previousGoalID.count])!
-                if goalNumber >= 100 {
-                    return "G" + String(goalNumber + 1)
-                } else if goalNumber >= 10 {
-                    return "G0" + String(goalNumber + 1)
-                } else {
-                    return "G00" + String(goalNumber + 1)
-                }
-            }
-            return "G001"
-        }
-        
-        self.goalId = createID(user)
         self.title = title
         self.duration = duration
         self.startDate = startDate
         self.rank = rank
-        
+        self.plans = plans
         self.endDate = calculateEndDate()
     }
     
@@ -63,12 +46,12 @@ class GoalClass {
     }
     
     func addNewPlan(title : String) {
-        self.plans.append(PlanClass(title: title, goal: self))
+        self.plans.append(PlanClass(title: title))
     }
     
     
-    func removePlan(_ id : String) {
-        let removedPlan = self.plans.filter {$0.planId == id}[0]
+    func removePlan(_ id : UUID) {
+        var removedPlan = self.plans.filter {$0.id == id}[0]
         removedPlan.isDeleted = true
     }
     
