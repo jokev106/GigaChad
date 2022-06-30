@@ -40,7 +40,7 @@ class GoalClass : Identifiable {
     }
     
     func calculateRemainingDays() -> Int {
-        let diffSeconds = endDate.timeIntervalSinceReferenceDate - startDate.timeIntervalSinceReferenceDate
+        let diffSeconds = endDate.timeIntervalSinceReferenceDate - Date().timeIntervalSinceReferenceDate
         let diffDays = Int(diffSeconds / (60.0 * 60.0 * 24.0))
         return diffDays
     }

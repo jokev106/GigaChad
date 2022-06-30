@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  BuddyGoals
 //
-//  Created by Jonathan Kevin on 24/06/22.
+//  Created by I Gede Bagus Wirawan on 28/06/22.
 //
 
 import SwiftUI
@@ -23,11 +23,15 @@ struct GoalView: View {
        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
+    //Modal Bool
     @State var addNewPlanView = false
+    @State var addNewActionView = false
+    @State var tapRankView = false
+    @State var tapEditGoal = false
+    
     
     @EnvironmentObject var activityToday : Dailies
-    
-    
+
     var body: some View {
         
         NavigationView {
@@ -45,22 +49,18 @@ struct GoalView: View {
                         
                         //Spacer(minLength: 10)
                         
-                        //Card
-                        Button(action: {
-                            //DO action
-                        }, label: {
+                        Group {
                             VStack{
                                 HStack {
-                                    Text(activityToday.todaysPlanAction.filter({$0.key.title == "Olahraga"})[0].value.filter({$0.place == "Kompleks"})[0].action)
+                                    Text(activityToday.goal.title)
                                         .font(.system(size: 25, weight: .bold))
                                         .frame(alignment: .topTrailing)
                                         .foregroundColor(Color.black)
-//                                    Text(activityToday.goal.plans.filter({$0.title == "Olahraga"})[0].actions.filter({$0.place == "Kompleks"})[0].action)
 
                                     Spacer()
 
                                     Button(action: {
-                                        
+                                        self.tapEditGoal.toggle()
                                     }, label: {
                                         Text("Edit")
                                             .font(.system(size: 10))
@@ -68,10 +68,10 @@ struct GoalView: View {
                                             .background(white)
                                             .cornerRadius(10)
                                     })
+                                    .sheet(isPresented: $tapEditGoal) {
+                                        EditGoalView(goal: activityToday.goal)
+                                    }//Button card
 
-                                    //Image(systemName: "chevron.right")
-                                        // .padding(.trailing, 10)
-                                        // .foregroundColor(Color.gray)
                                 }
                                 
                                 HStack {
@@ -102,7 +102,7 @@ struct GoalView: View {
                                             .foregroundColor(Color.black)
                                             .bold()
                                         Spacer()
-                                        Text("15 Days")
+                                        Text("\(activityToday.goal.calculateRemainingDays()) Days")
                                             .foregroundColor(Color.gray)
                                     }
                                     .font(.system(size: 8))
@@ -116,36 +116,32 @@ struct GoalView: View {
                             }
                             .padding()
                             .background(.white)
-
-                        })//Button card
+                        } //Group Card
                         .cornerRadius(10)
                         .padding()
                         .shadow(radius: 5)
+                        
                         //Close of Card
                         
                         VStack(spacing:-10){
                             
                             HStack {
-                                Button(action: {
-                                    
-                                }, label: {
+                                
+                                Button(action: {self.addNewPlanView.toggle()}) {
                                     Image(systemName: "list.triangle")
                                         .font(.system(size: 20, weight: .bold))
-                                })
+                                }.sheet(isPresented: $addNewPlanView) {
+                                    AddPlanView()
+                                }
                                 
                                 Spacer()
                                 
-                                Button(action: {
-//                                    activityToday.goal.addNewPlan(title: "Tidur")
-                                    activityToday.todaysPlanAction[PlanClass(title: "Tidur", actions: [])] = []
-                                    let _ = print(activityToday.todaysPlanAction.count)
-                                }) {
+                                Button(action: {self.addNewActionView.toggle()}) {
                                     Image(systemName: "plus")
                                         .font(.system(size: 20, weight: .bold))
+                                }.sheet(isPresented: $addNewActionView) {
+                                    AddActionView()
                                 }
-//                                }.sheet(isPresented: $addNewPlanView) {
-//                                    AddPlanView()
-//                                }
                                 
                             }.padding(25)
                             
@@ -159,6 +155,7 @@ struct GoalView: View {
                         ToolbarItemGroup(placement: .navigationBarTrailing){
                             Button(action: {
                                 //Do action
+                                self.tapRankView.toggle()
                             }, label: {
                                 HStack {
                                     Image(systemName: "diamond.fill")
@@ -175,7 +172,9 @@ struct GoalView: View {
                                 .background(.white)
                                 .cornerRadius(10)
                                 .shadow(radius: 2)
-                            })
+                            }).sheet(isPresented: $tapRankView) {
+                                RankView()
+                            }
                         }
                     } //Toolbar
                     
@@ -262,79 +261,6 @@ struct GoalView_Previews: PreviewProvider {
 //}
 //Text("Select an item")
 
-struct PlanView: View {
-    
-    var plan : PlanClass
-    var planActions : [Actionable]
-    
-//    init(plan : PlanClass, planAction : [Actionable]) {
-//        self.plan = plan
-//        self.planActions = planAction
-//    }
-    
-    var body: some View {
-        VStack(spacing:-10){
-                HStack{
-                    Text(plan.title)
-                        .foregroundColor(.gray)
-                        .font(.system(size: 22.5))
-                        .bold()
-                        .padding()
-                    Spacer()
-                }
-                let _ = print("AAAAAAA")
-                ForEach(planActions) { action in
-                    let _ = print("action.action")
-                    NavigationLink(destination: AddActionView(action : action, planId: plan.id), label: {
-                        CardView(imageCard: "Stars_4", colorCard: purple, milestone: action.action, destinationCard: "")
-                    })
-    //                Text(action.action)
-                }
-            
-            
-            //Card
-//            CardView(imageCard: "Stars_4", colorCard: purple, milestone: "abla", destinationCard: "")
-//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-//            CardView(imageCard: "Stars_3", colorCard: blue, milestone: "abla", destinationCard: "")
-//            CardView(imageCard: "Stars_1", colorCard: white, milestone: "lol lol abla", destinationCard: "")
-//            CardView(imageCard: "Stars_2", colorCard: white, milestone: "abla", destinationCard: "")
-//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-//            CardView(imageCard: "Stars_5", colorCard: orange, milestone: "lol lol abla", destinationCard: "")
-            //Close of Card
-        }
-    }
-}
 
-struct ScrollPlanView: View {
-    
-    @EnvironmentObject var activityToday : Dailies
-    
-    var body: some View {
-        ScrollView {
-            ForEach(Array(activityToday.todaysPlanAction.keys)) { key in
-                PlanView(plan: key, planActions: activityToday.todaysPlanAction[key]!)
-                ForEach(activityToday.todaysPlanAction[key]!) { action in
-                                    Text(action.action)
-                                }
-                let _ = print("Masuk")
-            }
-//            ForEach(0..<activityToday.goal.plans.count){ index in
-//                PlanView(py<Actionable>)') cannot conform to 'Hashable'lan: activityToday.goal.plans[index], planActions: activityToday.goal.plans[index].actions)
-//                ForEach(activityToday.goal.plans[index].actions) { action in
-//                    Text(action.action)
-//                }
-////                    let objectMirror = Mirror(reflecting: action)
-////                    let properties = objectMirror.childrenlizer
-////
-////                    ForEach(Array(properties)) { property in
-////
-////                      let _ = print("\(property.label!) = \(property.value)")
-////
-////                    }
-////               Text(activityToday.todaysPlanAction.filter({$0.key.title == "Olahraga"})[0].value.filter({$0.place == "Kompleks"})[0].action)
-////                Text(activityToday.todaysPlanAction[plan]![0].action)
-//            }
-        }
-    }
-}
+
+

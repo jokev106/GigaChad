@@ -2,7 +2,7 @@
 //  BuddyGoalsApp.swift
 //  BuddyGoals
 //
-//  Created by Jonathan Kevin on 24/06/22.
+//  Created by I Gede Bagus Wirawan on 28/06/22.
 //
 
 import SwiftUI
@@ -14,7 +14,7 @@ struct BuddyGoalsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            GoalView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(activityToday)
         }

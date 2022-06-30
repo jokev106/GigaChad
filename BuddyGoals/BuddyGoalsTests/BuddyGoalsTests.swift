@@ -2,7 +2,7 @@
 //  BuddyGoalsTests.swift
 //  BuddyGoalsTests
 //
-//  Created by Jonathan Kevin on 24/06/22.
+//  Created by I Gede Bagus Wirawan on 28/06/22.
 //
 
 import XCTest

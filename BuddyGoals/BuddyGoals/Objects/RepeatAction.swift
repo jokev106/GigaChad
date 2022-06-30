@@ -7,16 +7,16 @@
 
 import Foundation
 
-enum RepeatAction {
-    case never
-    case daily
-    case weekdays
-    case weekends
-    case weekly
-    case biweekly
-    case monthly
-    case every_3_months
-    case every_6_months
-    case yearly
+enum RepeatAction : String {
+    case never = "Never"
+    case daily = "Daily"
+    case weekdays = "Weekdays"
+    case weekends = "Weekends"
+    case weekly = "Weekly"
+    case biweekly = "Biweekly"
+    case monthly = "Monthly"
+    case every_3_months = "Every 3 Months"
+    case every_6_months = "Every 6 Months"
+    case yearly = "Yearly"
     
 }

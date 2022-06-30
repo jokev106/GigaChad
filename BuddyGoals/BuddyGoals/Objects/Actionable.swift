@@ -10,12 +10,8 @@ import Foundation
 
 class Actionable: Identifiable {
     var id = UUID()
-    
-    
-    // ID = GoalID + PlanID + ActionID
-//    let actionId = UUID()
     var action : String
-    var time : String // No time data type (?)
+    var time : Date // No time data type (?)
     var place : String
     var startDate : Date
     var repeats : RepeatAction
@@ -24,7 +20,7 @@ class Actionable: Identifiable {
     var isDoneToday : Bool = false
     var isDeleted : Bool = false
     
-    init(action : String, time : String, place : String, startDate : Date, repeats : RepeatAction, difficulty : Rank) {
+    init(action : String,  time : Date, place : String, startDate : Date, repeats : RepeatAction, difficulty : Rank) {
         
         self.action = action
         self.time = time

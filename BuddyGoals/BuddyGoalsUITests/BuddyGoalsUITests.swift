@@ -2,7 +2,7 @@
 //  BuddyGoalsUITests.swift
 //  BuddyGoalsUITests
 //
-//  Created by Jonathan Kevin on 24/06/22.
+//  Created by I Gede Bagus Wirawan on 28/06/22.
 //
 
 import XCTest
@@ -27,7 +27,6 @@ class BuddyGoalsUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

@@ -14,6 +14,8 @@ struct AddPlanView: View {
     @State private var milestoneTitle:  String = ""
     @State private var startDatePicker = Date()
     
+    @EnvironmentObject var activityToday : Dailies
+    
     var body: some View {
         GeometryReader{ geo in
             
@@ -32,17 +34,17 @@ struct AddPlanView: View {
                             .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
                             .padding(.horizontal)
                         
-                        //Schedule set up
-                        Text("Schedule")
-                            .foregroundColor(Color.blue)
-                            .frame(maxWidth: .infinity , alignment: .leading)
-                            .padding([.top, .leading], 26.0)
-                        DatePicker("Start Date", selection: $startDatePicker, in: Date()...)
-//                            .datePickerStyle(GraphicalDatePickerStyle())
-                            .padding()
-                            .foregroundColor(Color.black)
-                            .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
-                            .padding(.horizontal)
+//                        //Schedule set up
+//                        Text("Schedule")
+//                            .foregroundColor(Color.blue)
+//                            .frame(maxWidth: .infinity , alignment: .leading)
+//                            .padding([.top, .leading], 26.0)
+//                        DatePicker("Start Date", selection: $startDatePicker, in: Date()...)
+////                            .datePickerStyle(GraphicalDatePickerStyle())
+//                            .padding()
+//                            .foregroundColor(Color.black)
+//                            .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
+//                            .padding(.horizontal)
                         Spacer()
                     }
                     //content
@@ -50,7 +52,7 @@ struct AddPlanView: View {
                     
                     //navbar Setting
                     .navigationBarTitle(
-                        Text("New Milestone").bold(),
+                        Text("Plan").bold(),
                         displayMode: .inline)
                     .navigationBarItems(leading:
                                             //Cancel Button
@@ -59,13 +61,14 @@ struct AddPlanView: View {
                     }) {
                         Text("Cancel").bold()
                     }, trailing: Button(action: {
-                        
+                        activityToday.addNewPlan(title: $milestoneTitle.wrappedValue)
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Create").bold()
                     })
                     .foregroundColor(Color.white)
                 }//navigationView
-//                .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .white, hideSeperator: true)
+                .navigationAppearance(backgroundColor: UIColor(primary900), foregroundColor: .white, hideSeperator: true)
             }//Vstack Line 23
         }//geometryReader
     }//bodyView

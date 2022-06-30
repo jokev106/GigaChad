@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 // String Extension for slicing like array : String[1..<String.count]
 extension String {
@@ -21,5 +20,3 @@ extension String {
         return self[startIndex..<stopIndex]
     }
 }
-
-

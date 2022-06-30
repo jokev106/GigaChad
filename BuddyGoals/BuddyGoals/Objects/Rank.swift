@@ -8,9 +8,9 @@
 import Foundation
 
 enum Rank {
-    case rookie
-    case beginner
-    case intermediate
-    case pro
+    case trivial
+    case easy
+    case medium
+    case hard
     case expert
 }

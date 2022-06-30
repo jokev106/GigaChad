@@ -35,7 +35,7 @@ class PlanClass : Hashable, Equatable, Identifiable {
         hasher.combine(id)
     }
     
-    func addNewAction(action : String, time : String, place : String, startDate : Date, repeats : RepeatAction, difficulty : Rank) {
+    func addNewAction(action : String, time : Date, place : String, startDate : Date, repeats : RepeatAction, difficulty : Rank) {
         self.actions.append(Actionable(action: action, time: time, place: place, startDate: startDate, repeats: repeats, difficulty: difficulty))
     }
     
