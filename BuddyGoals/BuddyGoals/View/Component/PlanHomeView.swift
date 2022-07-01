@@ -25,7 +25,6 @@ struct PlanHomeView: View {
             //Card
             ForEach(planActions) { action in
                 
-                let _ = print("AAAA")
                 NavigationLink(destination: AddActionView(action : action, planId: plan.id), label: {
                     
                     let (imageName, imageColor) : (String, Color) = getImageNameColor(action: action)

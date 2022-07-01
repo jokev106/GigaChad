@@ -46,7 +46,6 @@ struct GoalView: View {
                         Spacer()
                     }
                     VStack {
-                        
                         //Spacer(minLength: 10)
                         
                         Group {
@@ -69,7 +68,7 @@ struct GoalView: View {
                                             .cornerRadius(10)
                                     })
                                     .sheet(isPresented: $tapEditGoal) {
-                                        EditGoalView(goal: activityToday.goal)
+                                        EditGoalView()
                                     }//Button card
 
                                 }

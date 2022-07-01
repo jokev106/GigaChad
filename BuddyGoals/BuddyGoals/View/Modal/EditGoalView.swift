@@ -14,7 +14,10 @@ struct EditGoalView: View {
     @State private var milestoneTitle:  String = ""
     @State private var startDatePicker = Date()
     
-    var goal : GoalClass
+    @EnvironmentObject var activityToday : Dailies
+    
+    let formatter = DateFormatter()
+    @State var lowerBoundDateTime = Date()
     
     var body: some View {
         GeometryReader{ geo in
@@ -39,7 +42,9 @@ struct EditGoalView: View {
                             .foregroundColor(Color.blue)
                             .frame(maxWidth: .infinity , alignment: .leading)
                             .padding([.top, .leading], 26.0)
-                        DatePicker("Start Date", selection: $startDatePicker, in: Date()...)
+                        
+                        
+                        DatePicker("Start Date", selection: $startDatePicker, in: lowerBoundDateTime...)
 //                            .datePickerStyle(GraphicalDatePickerStyle())
                             .padding()
                             .foregroundColor(Color.black)
@@ -62,7 +67,9 @@ struct EditGoalView: View {
                     }) {
                         Text("Cancel").bold()
                     }, trailing: Button(action: {
-                        
+                        activityToday.goal.title = $milestoneTitle.wrappedValue
+                        activityToday.goal.startDate = $startDatePicker.wrappedValue
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Done").bold()
                     })
@@ -70,7 +77,10 @@ struct EditGoalView: View {
                 }//navigationView
                 .navigationAppearance(backgroundColor: UIColor(primary900), foregroundColor: .white, hideSeperator: true)
                 .onAppear {
-                    milestoneTitle = goal.title
+                    milestoneTitle = activityToday.goal.title
+                    startDatePicker = activityToday.goal.startDate
+                    formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                    lowerBoundDateTime = formatter.date(from: "2016/01/01 00:00")!
                 }
             }//Vstack Line 23
         }//geometryReader
@@ -80,6 +90,7 @@ struct EditGoalView: View {
 
 struct EditGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        EditGoalView(goal: GoalClass(title: "Play", duration: 5, startDate: Date(), rank: .trivial))
+        EditGoalView()
+            .environmentObject(Dailies())
     }
 }

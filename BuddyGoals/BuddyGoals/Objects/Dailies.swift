@@ -10,7 +10,7 @@ import Foundation
 class Dailies : ObservableObject {
     var date : Date = Date.now
     @Published var todaysPlanAction : [PlanClass : [Actionable]] = [:]
-    @Published var goal = GoalClass(title: "Turun 10 Kg dalam 10 Bulan", duration: 5, startDate: Date.now, rank: .medium, plans: [
+    @Published var goal = GoalClass(title: "Turun 10 Kg dalam 10 Bulan", duration: 5, startDate: Calendar.current.date(byAdding: .day, value: -10, to: Date())!, rank: .medium, plans: [
         PlanClass(title: "Olahraga", actions: [
             Actionable(action: "Jogging tiap Pagi", time: Date(), place: "Kompleks", startDate: Date.now, repeats: .daily, difficulty: .medium),
             Actionable(action: "Push-up 100x", time: Date(), place: "Rumah", startDate: Date.now, repeats: .weekdays, difficulty: .hard),
